@@ -2,8 +2,9 @@
 # @Author: yanxia
 # @Date:   2018-02-18 20:33:00
 # @Last Modified by:   yanxia
-# @Last Modified time: 2018-02-22 23:41:38
+# @Last Modified time: 2018-02-23 00:04:04
 
+import sys
 import pandas as pd
 import numpy as np
 import matplotlib
@@ -49,7 +50,7 @@ def main():
     # ---------- Directories & User inputs --------------
     # Location of data folder
     data_dir    = './data/'
-    FLAG_train  = False
+    FLAG_train  = (sys.argv[1] == '--train')
 
     ##########################################
     ######## Load and preprocess data ########

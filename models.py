@@ -2,7 +2,7 @@
 # @Author: yanxia
 # @Date:   2018-02-19 19:26:02
 # @Last Modified by:   yanxia
-# @Last Modified time: 2018-02-22 23:40:26
+# @Last Modified time: 2018-02-23 00:03:55
 
 import pandas as pd
 import numpy as np
@@ -141,23 +141,23 @@ def get_regressor_cross_validate_score(model, X_test, y_test, scoring, n_splits)
 
 def train_regressor_models(X_train, y_train, n_splits, scoring = 'neg_mean_squared_error'):
     # Linear ridge regression
-    regressor_ridge = models.build_regressor_Ridge( X_train  = X_train, 
-                                                    y_train  = y_train, 
-                                                    scoring  = scoring, 
-                                                    n_splits = n_splits
-                                                  )
+    regressor_ridge = build_regressor_Ridge( X_train  = X_train, 
+                                             y_train  = y_train, 
+                                             scoring  = scoring, 
+                                             n_splits = n_splits
+                                           )
     # Random forest regression
-    regressor_rf    = models.build_regressor_RF (   X_train  = X_train, 
-                                                    y_train  = y_train, 
-                                                    scoring  = scoring, 
-                                                    n_splits = n_splits
-                                                )
+    regressor_rf    = build_regressor_RF(    X_train  = X_train, 
+                                             y_train  = y_train, 
+                                             scoring  = scoring, 
+                                             n_splits = n_splits
+                                        )
     # Support vector regression
-    regressor_svr   = models.build_regressor_SVR(   X_train  = X_train, 
-                                                    y_train  = y_train, 
-                                                    scoring  = scoring, 
-                                                    n_splits = n_splits
-                                                )
+    regressor_svr   = build_regressor_SVR(   X_train  = X_train, 
+                                             y_train  = y_train, 
+                                             scoring  = scoring, 
+                                             n_splits = n_splits
+                                         )
 
 
 def predict_regressor(X_test, model):
